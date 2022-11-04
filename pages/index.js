@@ -29,6 +29,7 @@ export default function Home() {
         <img width="256" height="256" layout="fixed" className="animate-fade-in" src={Pokemon.sprites?.front_default} />
         <div className="text-2xl font-bold capitalize">
           <div>Name: {Pokemon.name}</div>
+          <div>ID: {Pokemon.id}</div>
           <div>Weight: {Pokemon.weight}</div>
         </div>
       </div>
