@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
-
+import PokemonCard from "../components/pokemon-card/pokemon-card.component";
 import 'tailwindcss/tailwind.css'
+import Button from "../components/button/button.component";
 
-const btn =
-  "inline-flex items-center px-3 py-1.5 border border-gray-300 shadow-sm font-medium rounded-full text-gray-700 bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500";
+
 
 export default function Home() {
   const [Pokemon, SetPokemon] = useState([])
@@ -24,19 +24,8 @@ export default function Home() {
 
   return (
     <div className="w-screen h-screen flex flex-col justify-center text-center" >
-      <h1 className="text-3xl font-bold underline"> Here is your Pokemon </h1>
-      <div className="flex flex-col items-center">
-        <img width="256" height="256" layout="fixed" className="animate-fade-in" src={Pokemon.sprites?.front_default} />
-        <div className="text-2xl font-bold capitalize">
-          <div>Name: {Pokemon.name}</div>
-          <div>ID: {Pokemon.id}</div>
-          <div>Weight: {Pokemon.weight}</div>
-        </div>
-      </div>
-      <br />
-      <form>
-        <button className={btn} onSubmit={GetRandomPokemonByID}>Get New Pokemon</button>
-      </form>
+      <PokemonCard Pokemon={Pokemon} />
+      <Button Message={"Select Another Pokemon"} />
     </div>
   )
 }
