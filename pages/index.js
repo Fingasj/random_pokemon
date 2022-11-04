@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import PokemonCard from "../components/pokemon-card/pokemon-card.component";
 import 'tailwindcss/tailwind.css'
-import Button from "../components/button/button.component";
 
+import Button from "../components/button/button.component";
+import PokemonCard from "../components/pokemon-card/pokemon-card.component";
 
 
 export default function Home() {
@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <div className="w-screen h-screen flex flex-col justify-center text-center" >
       <PokemonCard Pokemon={Pokemon} />
-      <Button Message={"Select Another Pokemon"} />
+      <Button btnHandler={GetRandomPokemonByID} Message={"Select Another Pokemon"} />
     </div>
   )
 }
