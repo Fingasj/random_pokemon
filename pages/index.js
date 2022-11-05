@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import Head from "next/head";
 import 'tailwindcss/tailwind.css'
 
 import Button from "../components/button/button.component";
@@ -23,9 +24,13 @@ export default function Home() {
   }
 
   return (
-    <div className="w-screen h-screen flex flex-col justify-center text-center" >
-      <PokemonCard Pokemon={Pokemon} />
-      <Button btnHandler={GetRandomPokemonByID} Message={"Select Another Pokemon"} />
-    </div>
-  )
+    <>
+      <Head>
+        <title>Random Pokemon</title>
+      </Head>
+      <div className="w-screen h-screen flex flex-col justify-center text-center" >
+        <PokemonCard Pokemon={Pokemon} />
+        <Button btnHandler={GetRandomPokemonByID} Message={"Select Another Pokemon"} />
+      </div>
+    </>)
 }
